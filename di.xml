@@ -19,5 +19,5 @@
     </virtualType>
     <preference for="Magento\Sales\Model\Order\Pdf\Items\Invoice\DefaultInvoice"
                 type="Sale\Dropdown\Model\Order\Pdf\Items\Invoice\DefaultInvoice"/>
-    <preference for="Magento\Sales\Block\Adminhtmlcheck\Order\Invoice\View" type="Sale\Dropdown\Block\Adminhtml\Order\Invoice\View"/>
+    <preference for="Magento\Sales\Block\Adminhtml\Order\Invoice\View" type="Sale\Dropdown\Block\Adminhtml\Order\Invoice\View"/>
 </config>
