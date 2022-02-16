@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Checkout\Api\PaymentInformationManagementInterface">
+        <plugin name="validate" type="Payment\Comment\Plugin\Model\Checkout\Validation"/>
+    </type>
+    <type name="Magento\Checkout\Api\GuestPaymentInformationManagementInterface">
+        <plugin name="guest-validate" type="Payment\Comment\Plugin\Model\Checkout\GuestValidation"/>
+    </type>
+    <type name="Magento\Sales\Block\Adminhtml\Order\View\Tab\Info">
+        <plugin name="sales-order-view-customer-comment" type="Payment\Comment\Plugin\Block\Adminhtml\Order\View\Tab\Info"/>
+    </type>
+    <type name="Magento\Sales\Model\Order">
+        <plugin name="Payment-customer-comment" type="Payment\Comment\Plugin\SalesModelOrderPlugin"/>
+    </type>
+    <virtualType name="Magento\Sales\Model\ResourceModel\Order\Grid" type="Magento\Sales\Model\ResourceModel\Grid">
+        <arguments>
+            <argument name="columns" xsi:type="array">
+                <item name="payment_comment" xsi:type="string">payment_comment.mob_type</item>
+            </argument>
+        </arguments>
+    </virtualType>
+</config>
